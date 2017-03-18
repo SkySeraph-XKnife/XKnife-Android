@@ -1,0 +1,52 @@
+/*
+ * Copyright (C) 2016 SkySeraph <skyseraph00@126.com>
+ *
+ * This file is part of SkySeraph
+ */
+
+ext {
+
+    abortOnLintError = false
+    checkLintRelease = false
+
+    android = [compileSdkVersion        : 24,
+               buildToolsVersion        : "25.0.2",
+               applicationId            : "com.skyseraph.xknife",
+               applicationIdUserLogin   : "com.skyseraph.xknife.module.userlogin",
+               applicationIdLaunch      : "com.skyseraph.xknife.module.launch",
+               applicationIdUpgrade     : "com.skyseraph.xknife.module.upgrade",
+               minSdkVersion            : 15,
+               targetSdkVersion         : 24,
+               versionCode              : 1,
+               versionName              : "1.0.0",
+               testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner"
+    ]
+
+    def supportVersion = "24.2.1"
+    def daggerVersion = "2.5"
+    def butterKnifeVersion = "8.1.0"
+    def retrofitVersion = "2.1.0"
+    def okhttpVersion = "3.4.1"
+
+    dependencies = ["appcompat-v7"   : "com.android.support:appcompat-v7:${supportVersion}",
+                    "design"         : "com.android.support:design:${supportVersion}",
+                    "appcompat-v4"   : "com.android.support:support-v4:${supportVersion}",
+                    "recyclerview-v7": "com.android.support:recyclerview-v7:${supportVersion}",
+                    "cardview-v7"    : "com.android.support:cardview-v7:${supportVersion}",
+
+                    // inject library
+                    "butterknife"    : "com.jakewharton:butterknife:${butterKnifeVersion}",
+
+                    // graphics library
+                    "glide"          : "com.github.bumptech.glide:glide:3.7.0",
+
+                    // network library
+                    "retrofit"       : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+                    "okhttp"         : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+                    "okio"           : "com.squareup.okio:okio:1.9.0",
+
+                    "junit"          : "junit:junit:4.12",
+
+                    "gson"           : "com.google.code.gson:gson:2.7",
+    ]
+}
