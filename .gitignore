@@ -50,3 +50,5 @@ captures/
 .DS_Store
 
 doc/
+libs/
+src/main/res/drawable/

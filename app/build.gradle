@@ -1,20 +1,122 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
     defaultConfig {
-        applicationId "com.skyseraph.xknife"
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android["applicationId"]
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // 动态设置一些额外信息,使用 getString(R.string.build_time)
+//        resValue "string", "build_time", buildTime()
+//        resValue "string", "build_host", hostName()
+//        resValue "string", "build_revision", revision()
     }
-    buildTypes {
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    signingConfigs {
         release {
+        }
+
+        debug {
+        }
+
+        preview {
+
+        }
+    }
+
+    buildTypes {
+        // minifyEnabled 混淆处理
+        // shrinkResources 去除无用资源
+        // signingConfig 签名
+        // proguardFiles 混淆配置
+        // applicationIdSuffix 增加APP ID的后缀
+        // debuggable 是否保留调试信息
+
+        debug {
             minifyEnabled false
+            debuggable true
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.debug
+
+            manifestPlaceholders = [UMENG_APPKEY_VALUE: "xxxxxxxx"] // 替换AndroidManifest中的占位符
+            buildConfigField "String", "UMENG_APPKEY", "\"xxxxxxx\""
+            buildConfigField "String", "HOST", "\"http://100.100.100.100:8888\""
+        }
+
+        release {
+            manifestPlaceholders = [app_label: "@string/app_name"]
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro',
+                    project(":library:xkl_utils").file("proguard-rules.pro")
+
+            manifestPlaceholders = [UMENG_APPKEY_VALUE: "xxxxxx"]
+            buildConfigField "String", "UMENG_APPKEY", "\"xxxxxx\""
+            buildConfigField "String", "HOST", "\"http://xxx.xxx.com\""
+        }
+
+        preview {
+            applicationIdSuffix ".preview"
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.preview
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // 多渠道打包
+    productFlavors {
+        dev {
+            manifestPlaceholders = [channel: "dev"]
+        }
+        official {
+            manifestPlaceholders = [channel: "official"]
+        }
+        // ... ...
+        wandoujia {
+            manifestPlaceholders = [channel: "wandoujia"]
+        }
+        xiaomi {
+            manifestPlaceholders = [channel: "xiaomi"]
+        }
+        "360" { // flavor名如果是数字开头，必须用引号引起来
+            manifestPlaceholders = [channel: "360"]
+        }
+    }
+
+    // rename the apk with the version name (自定义导出的APK名称)
+//    applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+//            output.outputFile = new File(
+//                    output.outputFile.parent,
+//                    "BobLibrary-${variant.buildType.name}-${variant.versionName}-${variant.productFlavors[0].name}.apk".toLowerCase())
+//        }
+//    }
+
+    // rename the apk with the version name add output file sub folder by build type (自定义导出的APK名称 + 分类)
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(
+                    output.outputFile.parent + "/${variant.buildType.name}",
+                    "XKnife-${variant.buildType.name}-${variant.versionName}-${variant.productFlavors[0].name}.apk".toLowerCase())
         }
     }
 }
@@ -24,7 +126,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+
+    if (!isModuleDebug.toBoolean()) {
+        compile project(':module:xkm_launch')
+        compile project(':module:xkm_userlogin')
+    } else {
+        compile project(':bridge:xkb_bridge')
+    }
 }
