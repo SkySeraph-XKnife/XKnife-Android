@@ -2,6 +2,7 @@ XKnife-Android
 -------
 XKnife Android Project
 
+[![GitHub followers](https://img.shields.io/github/followers/skyseraph.svg?style=social&label=Follow)](https://github.com/skyseraph/XKnife-Android) 
 
 支持我
 -------
