@@ -2,7 +2,24 @@
 
     package="com.skyseraph.xknife.mod.launch">
 
-    <application android:label="@string/app_name">
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity android:name=".test.LaunchTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".impl.view.GuideActivity"></activity>
+
+        <activity android:name=".impl.view.SplashActivity"></activity>
+
+        <activity android:name=".test.MainActivity"></activity>
 
     </application>
 
