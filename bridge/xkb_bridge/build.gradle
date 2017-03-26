@@ -32,5 +32,9 @@ dependencies {
     })
     compile rootProject.ext.dependencies["appcompat-v7"]
     testCompile 'junit:junit:4.12'
+    // bridge
     compile project( ':bridge:xkb_annotation')
+    // lib
+    compile project( ':library:xkl_utils')
+    compile project( ':library:xkl_widges')
 }
