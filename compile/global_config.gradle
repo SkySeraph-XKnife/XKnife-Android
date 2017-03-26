@@ -12,9 +12,9 @@ ext {
     android = [compileSdkVersion        : 24,
                buildToolsVersion        : "25.0.2",
                applicationId            : "com.skyseraph.xknife",
-               applicationIdUserLogin   : "com.skyseraph.xknife.module.userlogin",
-               applicationIdLaunch      : "com.skyseraph.xknife.module.launch",
-               applicationIdUpgrade     : "com.skyseraph.xknife.module.upgrade",
+               applicationIdUserLogin   : "com.skyseraph.xknife.mod.userlogin",
+               applicationIdLaunch      : "com.skyseraph.xknife.mod.launch",
+               applicationIdUpgrade     : "com.skyseraph.xknife.mod.upgrade",
                minSdkVersion            : 15,
                targetSdkVersion         : 24,
                versionCode              : 1,
@@ -27,6 +27,7 @@ ext {
     def butterKnifeVersion = "8.1.0"
     def retrofitVersion = "2.1.0"
     def okhttpVersion = "3.4.1"
+    def gsonVersion = "3.7.0"
 
     dependencies = ["appcompat-v7"   : "com.android.support:appcompat-v7:${supportVersion}",
                     "design"         : "com.android.support:design:${supportVersion}",
@@ -38,7 +39,7 @@ ext {
                     "butterknife"    : "com.jakewharton:butterknife:${butterKnifeVersion}",
 
                     // graphics library
-                    "glide"          : "com.github.bumptech.glide:glide:3.7.0",
+                    "glide"          : "com.github.bumptech.glide:glide:${gsonVersion}",
 
                     // network library
                     "retrofit"       : "com.squareup.retrofit2:retrofit:${retrofitVersion}",

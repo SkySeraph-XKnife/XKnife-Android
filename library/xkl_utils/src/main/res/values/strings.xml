@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">xkl_utils</string>
+
+    <string name="app_name">xkm_utils</string>
+
+    <!-- PermissionUtils-->
+    <string name="permission_dialog_title">提示信息</string>
+    <string name="permission_dialog_msg">当前应用缺少必要权限，该功能暂时无法使用。如若需要，请单击【确定】按钮前往设置中心进行权限授权。</string>
+    <string name="permission_dialog_cancel">取消</string>
+    <string name="permission_dialog_ok">确定</string>
 </resources>
