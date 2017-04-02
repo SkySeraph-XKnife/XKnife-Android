@@ -9,12 +9,28 @@ android {
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resourcePrefix "xkl_jni_"
+
+        // 指定可选配置
+        externalNativeBuild {
+            cmake {
+                //  cppFlags "-frtti -fexceptions"
+//                cppFlags "-std=c++11 -frtti -fexceptions"
+                abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'mips', 'mips64'
+            }
+        }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+    sourceSets {
+        main {
+        }
+    }
+
+    // 配置 Gradle
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
     }
 
     buildTypes {
@@ -27,15 +43,5 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     compile rootProject.ext.dependencies["appcompat-v7"]
-    testCompile 'junit:junit:4.12'
-    // bridge
-    compile project( ':bridge:xkb_annotation')
-    // lib
-    compile project( ':library:xkl_utils')
-    compile project( ':library:xkl_jni')
-    compile project( ':library:xkl_widges')
 }

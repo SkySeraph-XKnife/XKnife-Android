@@ -64,8 +64,9 @@ android {
             minifyEnabled true
             shrinkResources true
             signingConfig signingConfigs.release
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro',
-                    project(":library:xkl_utils").file("proguard-rules.pro")
+                    project(":module:xkm_launch").file("proguard-rules.pro")
 
             manifestPlaceholders = [UMENG_APPKEY_VALUE: "xxxxxx"]
             buildConfigField "String", "UMENG_APPKEY", "\"xxxxxx\""

@@ -1,4 +1,5 @@
 include ':app'
+include ':library:xkl_jni'
 include ':library:xkl_utils'
 include ':library:xkl_widges'
 include ':library:xkl_ximage'
