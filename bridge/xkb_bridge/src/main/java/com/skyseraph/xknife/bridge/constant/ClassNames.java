@@ -10,20 +10,25 @@ public class ClassNames {
      * The constant LOGIN_ACTIVITY.
      */
 
-    public final static String LOGIN_ACTIVITY = "game.mtf.huawei.com.login.imp.view.LoginActivity";
+    public final static String LOGIN_ACTIVITY = "com.skyseraph.xknife.mod.uselogin.imp.view.LoginActivity";
     /**
      * The constant REGISTER_ACTIVITY.
      */
-    public final static String REGISTER_ACTIVITY = "game.mtf.huawei.com.login.imp.view.RegisterActivity";
+    public final static String REGISTER_ACTIVITY = "com.skyseraph.xknife.mod.uselogin.imp.view.RegisterActivity";
     /**
      * The constant FORGET_ACTIVITY.
      */
-    public final static String FORGET_ACTIVITY = "game.mtf.huawei.com.login.imp.view.ForgetActivity";
+    public final static String FORGET_ACTIVITY = "com.skyseraph.xknife.mod.uselogin.imp.view.ForgetActivity";
 
     /**
      * The constant MAIN_ACTIVITY.
      */
-    public final static String MAIN_ACTIVITY = "game.mtf.huawei.com.launch.test.MainActivity";
+    public final static String MAIN_ACTIVITY = "com.skyseraph.xknife.mod.launch.test.MainActivity";
 
+
+    /**
+     * The constant SPLASH_ACTIVITY.
+     */
+    public final static String SPLASH_ACTIVITY = "com.skyseraph.xknife.mod.launch.impl.view.SplashActivity";
 
 }

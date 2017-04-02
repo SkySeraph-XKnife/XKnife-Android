@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.skyseraph.xknife.mod.uselogin">
+
+    <application android:label="@string/app_name">
+
+        <activity android:name=".imp.view.LoginActivity"></activity>
+        <activity android:name=".imp.view.RegisterActivity"></activity>
+        <activity android:name=".imp.view.ForgetActivity"></activity>
+
+    </application>
+
+</manifest>

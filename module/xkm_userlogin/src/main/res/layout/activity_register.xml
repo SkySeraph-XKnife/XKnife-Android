@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <include
+        android:id="@+id/layout_cancel"
+        layout="@layout/view_login_cancel" />
+
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_cancel"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/rl_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    style="@style/login_edit_style"
+                    android:hint="手机号"
+                    android:inputType="phone"
+                    android:maxLength="11" />
+
+                <requestFocus />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_send_verifi_code"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="#f3f4f8"
+                android:text="获取验证码"
+                android:textColor="#B1B1B3"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#f8f8f8" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/til_verificode"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0.5dp">
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/login_edit_style"
+                android:ems="10"
+                android:hint="密码"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#f8f8f8" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_verificode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0.5dp">
+
+            <EditText
+                android:id="@+id/et_verificode"
+                style="@style/login_edit_style"
+                android:ems="10"
+                android:hint="验证码"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#f8f8f8" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/et_nickname"
+                style="@style/login_edit_style"
+                android:hint="昵称"
+                android:inputType="text"
+                android:maxLength="32" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_input"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_login_selector"
+        android:onClick="onClick"
+        android:text="创建账号"
+        android:textColor="#5c5c5c"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btn_create_account"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击“创建账号”即同意" />
+
+        <TextView
+            android:id="@+id/tv_user_rule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:text="用户协议"
+            android:textColor="#5c5c5c"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</RelativeLayout>

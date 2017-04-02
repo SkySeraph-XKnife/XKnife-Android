@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="verifiCodeButtonOn">#f3f4f5</color>
+    <color name="verifiCodeButtonOff">#b1b1b1</color>
+    <color name="verifiCodeButtonBgOff">#a2a2a2</color>
+    <color name="verifiCodeButtonBgOn">#f3f4f8</color>
+
+</resources>

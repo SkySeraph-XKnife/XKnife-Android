@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <include
+        android:id="@+id/layout_cancel"
+        layout="@layout/view_login_cancel" />
+
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_cancel"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="24dp"
+                android:gravity="center"
+                android:text="+86"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+
+                <EditText
+                    android:id="@+id/et_username"
+                    style="@style/login_edit_style"
+                    android:hint="你的手机号码"
+                    android:inputType="phone"
+                    android:maxLength="11" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#f8f8f8" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/login_edit_style"
+                android:hint="填写密码"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_login_selector"
+        android:onClick="onClick"
+        android:text="登陆"
+        android:textColor="#5c5c5c"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@+id/view_seprate"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:text="创建账号"
+            android:textColor="#5c5c5c"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/view_seprate"
+            android:layout_width="0.5dp"
+            android:layout_height="15dp"
+            android:layout_centerInParent="true"
+            android:background="#5c5c5c" />
+
+        <TextView
+            android:id="@+id/tv_forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/view_seprate"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:text="忘记密码"
+            android:textColor="#5c5c5c"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/ll_view_third_login_btn"
+        layout="@layout/view_third_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp" />
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_third_login_explain"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/tv_third_login_explain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="第三方账号登录"
+            android:textColor="#5c5c5c"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/tv_third_login_explain"
+            android:background="#969696" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_toRightOf="@id/tv_third_login_explain"
+            android:background="#969696" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_third_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/third_login_explain_layout"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/iv_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:onClick="onClick"
+            android:src="@drawable/btn_login_wechat_selector" />
+
+        <ImageView
+            android:id="@+id/iv_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:onClick="onClick"
+            android:src="@drawable/btn_login_qq_selector" />
+
+        <ImageView
+            android:id="@+id/iv_sina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:onClick="onClick"
+            android:src="@drawable/btn_login_sina_selector" />
+    </RelativeLayout>
+</LinearLayout>

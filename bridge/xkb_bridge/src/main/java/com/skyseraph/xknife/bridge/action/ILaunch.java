@@ -4,6 +4,7 @@ package com.skyseraph.xknife.bridge.action;
 import com.skyseraph.xknife.bridge.annotation.ClassName;
 import com.skyseraph.xknife.bridge.annotation.ParaKey;
 import com.skyseraph.xknife.bridge.annotation.RequestCode;
+import com.skyseraph.xknife.bridge.constant.ClassNames;
 import com.skyseraph.xknife.bridge.constant.ReqCodeConstant;
 import com.skyseraph.xknife.bridge.core.IntentWrapper;
 
@@ -22,7 +23,7 @@ public interface ILaunch {
      *
      * @param test the test
      */
-    @ClassName("game.mtf.huawei.com.launch.impl.view.SplashActivity")
+    @ClassName(ClassNames.SPLASH_ACTIVITY)
     @RequestCode(ReqCodeConstant.LAUNCH_REQUEST_CODE)
     void startLaunch(@ParaKey(startLaunchPara) String test);
 
@@ -32,12 +33,12 @@ public interface ILaunch {
      * @param test the test
      * @return the intent wrapper
      */
-    @ClassName("game.mtf.huawei.com.launch.impl.view.SplashActivity")
+    @ClassName(ClassNames.SPLASH_ACTIVITY)
     IntentWrapper startLaunchRet(@ParaKey(startLaunchPara) String test);
 
     /**
      * To main activity.
      */
-    @ClassName("game.mtf.huawei.com.launch.test.MainActivity")
+    @ClassName(ClassNames.MAIN_ACTIVITY)
     void toMainActivity();
 }
