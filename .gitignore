@@ -52,3 +52,7 @@ captures/
 doc/
 libs/
 src/main/res/drawable/
+
+src/main/java/com/skyseraph/xknife/lib/utils/image/crop/
+src/main/java/com/skyseraph/xknife/lib/utils/image/readme
+src/main/java/com/skyseraph/xknife/lib/utils/time/

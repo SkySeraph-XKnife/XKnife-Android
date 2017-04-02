@@ -61,7 +61,7 @@ public class ForgetPresenter extends BaseLoginPresenter {
             return;
         }
 
-        // TODO: 2017/3/23
+        // TODO: 2016/3/23
 
 
         if (timer != null) {

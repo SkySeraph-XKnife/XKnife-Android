@@ -1,0 +1,3 @@
+
+/* 初始化线程池 */
+TaskExecutor.init(3, 5, 2);

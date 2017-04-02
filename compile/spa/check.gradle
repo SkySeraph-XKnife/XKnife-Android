@@ -1,0 +1,82 @@
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+
+check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
+
+def configDir = "${project.rootDir}/compile/spa"
+def reportsDir = "${project.buildDir}/reports"
+
+// Android Lint
+android {
+    println("buildDir= $project.buildDir")
+    println("rootDir= $project.rootDir")
+
+    // lint 规则配置
+    lintOptions {
+        abortOnError true
+        xmlReport false
+        htmlReport true
+        lintConfig file("$configDir/lint/lint.xml")
+        htmlOutput file("$reportsDir/lint/lint-result.html")
+        xmlOutput file("$reportsDir/lint/lint-result.xml")
+    }
+}
+
+// Checkstyle task任务
+task checkstyle(type: Checkstyle) {
+    // 根据指定目录下的checkstyle.xml和suppressions.xml文件来分析代码并输出结果
+    configFile file("$configDir/checkstyle/checkstyle.xml")
+    configProperties.checkstyleSuppressionsPath = file("$configDir/checkstyle/suppressions.xml").absolutePath
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+    classpath = files()
+}
+
+// FindBugs task任务，依赖assembleDebug
+task findbugs(type: FindBugs, dependsOn: "assembleDebug") {
+    ignoreFailures = false // 有警告错误的时候也是允许构建
+    effort = "max"
+    reportLevel = "high"  // 报告的级别 Low,Medium,High
+    excludeFilter = new File("$configDir/findbugs/findbugs-filter.xml") // 过滤器配置文件
+    classes = files("${project.rootDir}/app/build/intermediates/classes")// 对应的.classe文件夹地址
+    source 'src' // 对应的源代码文件地址 source= fileTree("src/main/java/")
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    reports { //repoets指定报告类型，有xml和html两种方式
+        xml.enabled = false
+        html.enabled = true
+        xml {
+            destination "$reportsDir/findbugs/findbugs.xml"
+        }
+        html {
+            destination "$reportsDir/findbugs/findbugs.html"
+        }
+    }
+
+    classpath = files()
+}
+
+// PMD task任务
+task pmd(type: Pmd) {
+    ignoreFailures = false
+    ruleSetFiles = files("$configDir/pmd/pmd-ruleset.xml")
+    ruleSets = []
+
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        xml {
+            destination "$reportsDir/pmd/pmd.xml"
+        }
+        html {
+            destination "$reportsDir/pmd/pmd.html"
+        }
+    }
+}

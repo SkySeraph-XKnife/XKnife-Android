@@ -1,0 +1,2 @@
+image:              图片相关Utils
+image.crop:         PhotoCropper(Android大图片裁剪) https://github.com/ryanhoo/PhotoCropper （用例function.media.crop）

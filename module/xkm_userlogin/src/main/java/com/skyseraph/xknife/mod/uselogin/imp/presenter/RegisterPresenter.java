@@ -61,7 +61,7 @@ public class RegisterPresenter extends BaseLoginPresenter {
             return;
         }
 
-        // TODO: 2017/3/23
+        // TODO: ....
 
 
         if (timer != null) {

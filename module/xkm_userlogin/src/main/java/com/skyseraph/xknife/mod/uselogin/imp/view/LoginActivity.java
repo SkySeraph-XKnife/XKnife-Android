@@ -107,7 +107,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void loginSuccessed() {
-        // TODO: 2017/3/23 goto Main 
+        // TODO: ...  goto Main
     }
 
     @Override
