@@ -53,7 +53,7 @@ public class ScreenUtils {
      * Gets density.
      *
      * @param context the context
-     * @return density
+     * @return density density
      */
     public static float getDensity(Context context) {
         WindowManager wm = (WindowManager) context
@@ -88,7 +88,7 @@ public class ScreenUtils {
      * Snap shot with status bar bitmap.
      *
      * @param activity the activity
-     * @return bitmap
+     * @return bitmap bitmap
      */
     public static Bitmap snapShotWithStatusBar(Activity activity) {
         View view = activity.getWindow().getDecorView();
@@ -108,7 +108,7 @@ public class ScreenUtils {
      * Snap shot without status bar bitmap.
      *
      * @param activity the activity
-     * @return bitmap
+     * @return bitmap bitmap
      */
     public static Bitmap snapShotWithoutStatusBar(Activity activity) {
         View view = activity.getWindow().getDecorView();
@@ -154,6 +154,44 @@ public class ScreenUtils {
     }
 
     /**
+     * Px 2 sp int.
+     *
+     * @param context the context
+     * @param pxValue the px value
+     * @return the int
+     */
+    public static int px2sp(Context context, float pxValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (pxValue / fontScale + 0.5f);
+    }
+
+    /**
+     * Sp 2 px int.
+     *
+     * @param context the context
+     * @param spValue the sp value
+     * @return the int
+     */
+    public static int sp2px(Context context, float spValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (spValue * fontScale + 0.5f);
+    }
+
+    /**
+     * Dp 2 px int.
+     *
+     * @param context the context
+     * @param dp      the dp
+     * @return the int
+     */
+    public static int dp2px(Context context,int dp){
+        return (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                dp,
+                context.getResources().getDisplayMetrics());
+    }
+
+    /**
      * Gets screen density.
      *
      * @param resources the resources
@@ -162,6 +200,20 @@ public class ScreenUtils {
     public static float getScreenDensity(Resources resources) {
         DisplayMetrics dm = resources.getDisplayMetrics();
         return dm.density;
+    }
+
+    /**
+     * Sp 2 px int.
+     *
+     * @param context the context
+     * @param sp      the sp
+     * @return the int
+     */
+    public static int sp2px(Context context,int sp){
+        return (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_SP,
+                sp,
+                context.getResources().getDisplayMetrics());
     }
 
     /**

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--shape默认是rectangle,还有oval/line/ring-->
+
+    <!-- 圆角shape=rectangle时使用 -->
+    <corners
+        android:bottomLeftRadius="2dp"
+        android:bottomRightRadius="2dp"
+        android:radius="9dp"
+        android:topLeftRadius="2dp"
+        android:topRightRadius="2dp" />
+
+    <!-- 渐变 -->
+    <gradient
+        android:angle="45"
+        android:centerColor="@android:color/black"
+        android:centerX="0"
+        android:centerY="0"
+        android:endColor="@android:color/black"
+        android:gradientRadius="90"
+        android:startColor="@android:color/white"
+        android:type="radial"
+        android:useLevel="true" />
+
+    <!-- 间隔 -->
+    <padding
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp" />
+
+    <!-- 大小，一般在ImageView配合scaleType -->
+    <size
+        android:width="50dp"
+        android:height="50dp" />
+
+    <!-- 填充 -->
+    <solid android:color="@android:color/white" />
+
+    <!-- 指定边框，dashWidth为虚线宽度，dashGap为虚线间隔宽度 -->
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/black"
+        android:dashGap="2dp"
+        android:dashWidth="1dp" />
+</shape>
