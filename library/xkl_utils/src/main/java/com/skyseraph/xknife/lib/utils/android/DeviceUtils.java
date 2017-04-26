@@ -332,4 +332,5 @@ public class DeviceUtils {
     public static void reboot2Bootloader() {
         ShellUtils.execCmd("reboot bootloader", true);
     }
+
 }
