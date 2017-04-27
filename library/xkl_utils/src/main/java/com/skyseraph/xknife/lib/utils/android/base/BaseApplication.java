@@ -2,8 +2,8 @@ package com.skyseraph.xknife.lib.utils.android.base;
 
 import android.app.Application;
 
-import com.skyseraph.xknife.lib.utils.android.crash.XKnifeCrashHandler;
-import com.skyseraph.xknife.lib.utils.task.task.TaskExecutor;
+import com.skyseraph.xknife.lib.module.crash.XKnifeCrashHandler;
+import com.skyseraph.xknife.lib.module.task.task.TaskExecutor;
 
 /**
  * Created by SkySeraph on 2015/4/2.

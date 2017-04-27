@@ -2,7 +2,7 @@ package com.skyseraph.xknife.mod.uselogin.imp.presenter;
 
 
 import com.skyseraph.xknife.lib.utils.android.mvp.IBaseView;
-import com.skyseraph.xknife.lib.utils.task.TimerHelper;
+import com.skyseraph.xknife.lib.module.task.TimerHelper;
 import com.skyseraph.xknife.mod.uselogin.imp.model.AccountRegister;
 import com.skyseraph.xknife.mod.uselogin.imp.model.LoginStatus;
 import com.skyseraph.xknife.mod.uselogin.imp.util.LoginConstant;

@@ -1,7 +1,6 @@
 package com.skyseraph.xknife.mod.uselogin.imp.view;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.skyseraph.xknife.lib.utils.android.base.BaseActivity;
-import com.skyseraph.xknife.lib.utils.task.HandlerHepler;
+import com.skyseraph.xknife.lib.module.task.HandlerHepler;
 import com.skyseraph.xknife.mod.uselogin.R;
 import com.skyseraph.xknife.mod.uselogin.imp.model.AccountRegister;
 import com.skyseraph.xknife.mod.uselogin.imp.model.LoginStatus;

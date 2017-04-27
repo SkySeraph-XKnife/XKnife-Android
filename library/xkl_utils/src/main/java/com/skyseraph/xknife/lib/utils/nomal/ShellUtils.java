@@ -13,6 +13,36 @@ import java.util.List;
 public class ShellUtils {
 
     /**
+     * The constant COMMAND_SU.
+     */
+    public static final String COMMAND_SU = "su";
+    /**
+     * The constant COMMAND_SH.
+     */
+    public static final String COMMAND_SH = "sh";
+    /**
+     * The constant COMMAND_EXIT.
+     */
+    public static final String COMMAND_EXIT = "exit\n";
+    /**
+     * The constant COMMAND_LINE_END.
+     */
+    public static final String COMMAND_LINE_END = "\n";
+
+    private ShellUtils() {
+        throw new AssertionError();
+    }
+
+    /**
+     * check whether has root permission
+     *
+     * @return
+     */
+    public static boolean checkRootPermission() {
+        return execCmd("echo root", true, false).result == 0;
+    }
+
+    /**
      * 是否是在root下执行命令
      *
      * @param command 命令

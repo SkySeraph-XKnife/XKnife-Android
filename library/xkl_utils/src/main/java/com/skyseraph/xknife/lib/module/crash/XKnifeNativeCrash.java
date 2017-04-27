@@ -1,8 +1,6 @@
-package com.skyseraph.xknife.lib.utils.android.crash;
+package com.skyseraph.xknife.lib.module.crash;
 
 import android.content.Context;
-
-import java.io.File;
 
 /**
  * Created by SkySeraph on 2016/2/2.

@@ -1,4 +1,4 @@
-package com.skyseraph.xknife.lib.utils.android.crash;
+package com.skyseraph.xknife.lib.module.crash;
 
 import android.content.Context;
 

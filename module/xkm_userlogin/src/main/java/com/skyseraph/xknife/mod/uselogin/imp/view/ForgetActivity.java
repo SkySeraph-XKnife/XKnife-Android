@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.skyseraph.xknife.lib.utils.android.base.BaseActivity;
-import com.skyseraph.xknife.lib.utils.task.HandlerHepler;
+import com.skyseraph.xknife.lib.module.task.HandlerHepler;
 import com.skyseraph.xknife.mod.uselogin.R;
 import com.skyseraph.xknife.mod.uselogin.imp.model.AccountRegister;
 import com.skyseraph.xknife.mod.uselogin.imp.model.LoginStatus;

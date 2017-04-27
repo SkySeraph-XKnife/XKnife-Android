@@ -1,4 +1,4 @@
-package com.skyseraph.xknife.lib.utils.task.task;
+package com.skyseraph.xknife.lib.module.task.task;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
