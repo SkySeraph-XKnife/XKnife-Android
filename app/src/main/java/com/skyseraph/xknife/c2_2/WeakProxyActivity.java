@@ -10,11 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Bob on 2017/4/26.
+ * The type Weak proxy activity.
  */
-
 public class WeakProxyActivity extends AppCompatActivity implements WeakProxy.IWeakHost {
 
+    /**
+     * The Refer list.
+     */
     List<Object> referList = new ArrayList<Object>();
     private int xx = 112;
 

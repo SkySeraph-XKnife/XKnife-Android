@@ -12,12 +12,19 @@ import java.util.List;
 /**
  * Created by  on 2016/4/12.
  */
-
 public class Test {
 
+    /**
+     * The type Weak runnable.
+     */
     public class WeakRunnable implements Runnable {
         private WeakReference<Runnable> mWr;
 
+        /**
+         * Instantiates a new Weak runnable.
+         *
+         * @param runnable the runnable
+         */
         public WeakRunnable(Runnable runnable) {
             mWr = new WeakReference<Runnable>(runnable);
         }

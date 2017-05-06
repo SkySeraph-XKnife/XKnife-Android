@@ -5,7 +5,7 @@
     <application
         android:name=".AppApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/avatar"
         android:label="@string/app_name"
         android:supportsRtl="true">
         <activity android:name=".MainActivity">
@@ -15,6 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".c13_3_1.RxDemoActivity"></activity>
+
+        <activity android:name=".c13_3_2.RxHttpDemoActivity"></activity>
     </application>
 
 </manifest>

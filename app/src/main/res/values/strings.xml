@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">XKnife-Android</string>
+    <string name="text_moive_actor_name">主演：%s</string>
 </resources>

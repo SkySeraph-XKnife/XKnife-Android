@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.hugo'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -37,17 +39,17 @@ android {
         if (props['keystore.props.file']) {
             keys.load(new FileInputStream(file(props['keystore.props.file'])))
         } else {
-            keys["store"] = '../buildsystem/debug.keystore'
+            keys["store"] = '../local/keystore/debug.keystore'
             keys["alias"] = 'android'
             keys["storePass"] = 'androiddebugkey'
             keys["pass"] = 'android'
         }
 
         debug {
-            storeFile file(keys["store"])
-            keyAlias keys["alias"]
-            storePassword keys["storePass"]
-            keyPassword keys["pass"]
+//            storeFile file(keys["store"])
+//            keyAlias keys["alias"]
+//            storePassword keys["storePass"]
+//            keyPassword keys["pass"]
         }
 
         release {
@@ -82,6 +84,7 @@ android {
             manifestPlaceholders = [UMENG_APPKEY_VALUE: "xxxxxxxx"] // 替换AndroidManifest中的占位符
             buildConfigField "String", "UMENG_APPKEY", "\"xxxxxxx\""
             buildConfigField "String", "HOST", "\"http://100.100.100.100:8888\""
+            buildConfigField "String", "API_URL", '"http://api.douban.com/v2/"'
         }
 
         release {
@@ -97,6 +100,7 @@ android {
             manifestPlaceholders = [UMENG_APPKEY_VALUE: "xxxxxx"]
             buildConfigField "String", "UMENG_APPKEY", "\"xxxxxx\""
             buildConfigField "String", "HOST", "\"http://xxx.xxx.com\""
+            buildConfigField "String", "API_URL", '"http://api.douban.com/v2/"'
         }
 
         preview {
@@ -154,6 +158,13 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
+
+    // aspect
+    compile rootProject.ext.dependencies["aspectjrt"]
+
+    // butterknife
+    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    compile rootProject.ext.dependencies["butterknife"]
 
     if (!isModuleDebug.toBoolean()) {
         compile project(':module:xkm_launch')

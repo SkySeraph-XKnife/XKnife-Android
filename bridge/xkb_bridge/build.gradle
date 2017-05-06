@@ -38,4 +38,6 @@ dependencies {
     compile project( ':library:xkl_utils')
     compile project( ':library:xkl_jni')
     compile project( ':library:xkl_widges')
+    compile project( ':library:xkl_ximage')
+    compile project( ':library:xkl_xnet')
 }
