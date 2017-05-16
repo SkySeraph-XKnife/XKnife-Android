@@ -172,4 +172,9 @@ dependencies {
     } else {
         compile project(':bridge:xkb_bridge')
     }
+
+    // leakcanary
+    debugCompile rootProject.ext.dependencies["leakcanary_debug"]
+    releaseCompile rootProject.ext.dependencies["leakcanary_release"]
+    testCompile rootProject.ext.dependencies["leakcanary_test"]
 }

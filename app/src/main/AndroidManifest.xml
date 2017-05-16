@@ -19,6 +19,8 @@
         <activity android:name=".c13_3_1.RxDemoActivity"></activity>
 
         <activity android:name=".c13_3_2.RxHttpDemoActivity"></activity>
+
+        <activity android:name=".c9_4.LeakActivity"></activity>
     </application>
 
 </manifest>
