@@ -30,7 +30,8 @@ ext {
     def okhttpVersion = "3.5.0"
     def rxandroidVersion = "1.2.1"
     def okioVersion = "1.9.0"
-    def gsonVersion = "3.7.0"
+    def gsonVersion = "2.8.0"
+    def glideVersion = "3.6.1"
     def butterKnifeVersion = "8.1.0"
     def leakcanary = "1.5.1"
     def aspectVersion = "1.8.9"
@@ -46,11 +47,10 @@ ext {
                     "butterknife"                : "com.jakewharton:butterknife:${butterKnifeVersion}",
 
                     // graphics library
-                    "glide"                      : "com.github.bumptech.glide:glide:${gsonVersion}",
+                    "glide"                      : "com.github.bumptech.glide:glide:${glideVersion}",
+                    "gson"                       : "com.google.code.gson:gson:${gsonVersion}",
 
-                    "gson"                       : "com.google.code.gson:gson:2.7",
-
-                    // retrofit + okhttp + ReactiveX
+                    // retrofit + okhttp
                     "retrofit:retrofit"          : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
                     "retrofit:adapter-rxjava"    : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
                     "retrofit:converter-gson"    : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
