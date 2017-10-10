@@ -40,8 +40,8 @@ android {
             keys.load(new FileInputStream(file(props['keystore.props.file'])))
         } else {
             keys["store"] = '../local/keystore/debug.keystore'
-            keys["alias"] = 'android'
-            keys["storePass"] = 'androiddebugkey'
+            keys["alias"] = 'androiddebugkey'
+            keys["storePass"] = 'android'
             keys["pass"] = 'android'
         }
 
